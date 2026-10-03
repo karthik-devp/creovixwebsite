@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creovix Solution — Customer Support That Scales With Your Business</title>
+  <meta name="description" content="Dedicated customer support teams for growing SaaS and e-commerce companies. Creovix Solution handles customer conversations, support operations and back-office workflows while you focus on growth.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Creovix Solution — Customer Support That Scales With Your Business">
+  <meta property="og:description" content="Dedicated customer support teams for growing SaaS and e-commerce companies. Professional, scalable and built around your workflow.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://creovixsolution.com">
+  <meta property="og:image" content="assets/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Creovix Solution — Customer Support That Scales">
+  <meta name="twitter:description" content="Dedicated support teams for SaaS and e-commerce businesses. Scalable, professional and built around your workflow.">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ── Homepage-specific tweaks ── */
+
+    /* Hero visual show on tablets */
+    @media (max-width: 1024px) {
+      .hero__visual { display: flex; }
+      .hero__inner  { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .hero__card-wrapper { max-width: 360px; }
+    }
+    @media (max-width: 820px) {
+      .hero__inner  { grid-template-columns: 1fr; }
+      .hero__visual { display: none; }
+    }
+
+    /* Steps grid (homepage teaser — 2×2) */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+
+    .step-card {
+      background: var(--grad-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all var(--duration) var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .step-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .step-card__num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--accent-subtle);
+      border: 1.5px solid rgba(232,82,26,0.35);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1.1rem;
+    }
+    .step-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .step-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* About teaser principles grid */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .principle-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.4rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      transition: all var(--duration) var(--ease);
+    }
+    .principle-card:hover {
+      border-color: var(--border-hover);
+      background: var(--surface-hover);
+    }
+    .principle-card__icon {
+      width: 38px; height: 38px;
+      border-radius: var(--radius-md);
+      background: var(--accent-subtle);
+      border: 1px solid rgba(232,82,26,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+    .principle-card h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: var(--text-primary);
+    }
+    .principle-card p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Industry card badge colours */
+    .badge--saas { background: rgba(99,102,241,0.12); color: #a5b4fc; }
+    .badge--ecom { background: rgba(34,197,94,0.1); color: #4ADE80; }
+
+    /* Industry visual icon panel */
+    .industry-icon-panel {
+      width: 56px; height: 56px;
+      border-radius: var(--radius-lg);
+      background: var(--accent-subtle);
+      border: 1px solid rgba(232,82,26,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/logo.png" alt="Creovix Solution">
+        <span class="nav__logo-text">Creovix <span>Solution</span></span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link active">Home</a></li>
+        <li class="nav__item">
+          <a href="services.html" class="nav__link">Services</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Industries ▾</a>
+          <div class="nav__dropdown">
+            <a href="saas-support.html" class="nav__dropdown-link">SaaS Support</a>
+            <a href="ecommerce-support.html" class="nav__dropdown-link">E-commerce Support</a>
+          </div>
+        </li>
+        <li><a href="how-it-works.html" class="nav__link">How It Works</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="contact.html" class="btn btn-primary btn-sm">Book a Consultation</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav__mobile">
+  <button class="nav__mobile-close">✕</button>
+  <a href="index.html" class="nav__mobile-link">Home</a>
+  <a href="services.html" class="nav__mobile-link">Services</a>
+  <a href="saas-support.html" class="nav__mobile-link">SaaS Support</a>
+  <a href="ecommerce-support.html" class="nav__mobile-link">E-commerce Support</a>
+  <a href="how-it-works.html" class="nav__mobile-link">How It Works</a>
+  <a href="about.html" class="nav__mobile-link">About</a>
+  <a href="contact.html" class="nav__mobile-link btn btn-primary" style="margin-top:1rem;">Book a Consultation</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO
+════════════════════════════════════════════════ -->
+<section class="hero">
+  <!-- Background decorations -->
+  <div class="hero__bg-grid" aria-hidden="true"></div>
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__glow-2" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero__inner">
+
+      <!-- Left — Content -->
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Customer Support Outsourcing
+        </div>
+
+        <h1 class="display-xl hero__title">
+          Customer Support That<br>
+          <span class="highlight">Scales</span> With Your Business
+        </h1>
+
+        <p class="hero__lead">
+          Dedicated customer support teams for growing SaaS and e-commerce companies. We handle customer conversations, support operations and back-office workflows while you focus on growing your business.
+        </p>
+
+        <div class="hero__actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">
+            Book a Free Consultation
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="services.html" class="btn btn-secondary btn-lg">Explore Our Services</a>
+        </div>
+      </div>
+
+      <!-- Right — Faux Dashboard -->
+      <div class="hero__visual">
+        <div class="hero__card-wrapper">
+
+          <!-- Float card top-left -->
+          <div class="hero__float-card hero__float-card--tl">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            ✓ SOP-Driven Process
+          </div>
+
+          <!-- Dashboard panel -->
+          <div class="hero__interface">
+            <!-- Header -->
+            <div class="hero__interface-header">
+              <span class="hero__interface-title">Support Queue — Today</span>
+              <div style="display:flex;align-items:center;gap:0.5rem;">
+                <div class="hero__status-dot"></div>
+                <span style="font-size:0.72rem;color:var(--text-muted);">Live</span>
+              </div>
+            </div>
+
+            <!-- Ticket 1 -->
+            <div class="hero__ticket">
+              <div class="hero__ticket-avatar" style="background: linear-gradient(135deg,#6366F1,#8B5CF6);">JM</div>
+              <div class="hero__ticket-body">
+                <div class="hero__ticket-name">James M. · Billing</div>
+                <div class="hero__ticket-msg">Invoice question for last month's renewal...</div>
+              </div>
+              <span class="hero__ticket-badge badge--green">Resolved</span>
+            </div>
+
+            <!-- Ticket 2 -->
+            <div class="hero__ticket">
+              <div class="hero__ticket-avatar" style="background: linear-gradient(135deg,#E8521A,#F46330);">SR</div>
+              <div class="hero__ticket-body">
+                <div class="hero__ticket-name">Sarah R. · Onboarding</div>
+                <div class="hero__ticket-msg">Can't access the dashboard after setup...</div>
+              </div>
+              <span class="hero__ticket-badge badge--blue">Open</span>
+            </div>
+
+            <!-- Ticket 3 -->
+            <div class="hero__ticket" style="margin-bottom:0;">
+              <div class="hero__ticket-avatar" style="background: linear-gradient(135deg,#0EA5E9,#06B6D4);">AL</div>
+              <div class="hero__ticket-body">
+                <div class="hero__ticket-name">Alex L. · Returns</div>
+                <div class="hero__ticket-msg">Requesting refund for order #4821...</div>
+              </div>
+              <span class="hero__ticket-badge badge--orange">Pending</span>
+            </div>
+
+            <!-- Metric cards -->
+            <div class="hero__metrics">
+              <div class="hero__metric">
+                <div class="hero__metric-value" style="color:var(--accent);">Tickets</div>
+                <div class="hero__metric-label">Handled Daily</div>
+              </div>
+              <div class="hero__metric">
+                <div class="hero__metric-value" style="color:#60A5FA;">Avg. Response</div>
+                <div class="hero__metric-label">Time Tracked</div>
+              </div>
+              <div class="hero__metric">
+                <div class="hero__metric-value" style="color:#4ADE80;">Team</div>
+                <div class="hero__metric-label">Dedicated Agents</div>
+              </div>
+            </div>
+          </div><!-- /.hero__interface -->
+
+          <!-- Float card bottom-right -->
+          <div class="hero__float-card hero__float-card--br">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Live Chat + Email
+          </div>
+
+        </div><!-- /.hero__card-wrapper -->
+      </div><!-- /.hero__visual -->
+
+    </div><!-- /.hero__inner -->
+  </div><!-- /.container -->
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — TRUST STRIP
+════════════════════════════════════════════════ -->
+<div class="trust">
+  <div class="container">
+    <div class="trust__inner">
+
+      <div class="trust__item">
+        <div class="trust__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="trust__text">
+          <div class="trust__title">Dedicated Agents</div>
+          <div class="trust__desc">Your own support team</div>
+        </div>
+      </div>
+
+      <div class="trust__item">
+        <div class="trust__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div class="trust__text">
+          <div class="trust__title">Flexible Scaling</div>
+          <div class="trust__desc">Grow or adjust any time</div>
+        </div>
+      </div>
+
+      <div class="trust__item">
+        <div class="trust__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <div class="trust__text">
+          <div class="trust__title">SOP-Driven Support</div>
+          <div class="trust__desc">Process-aligned delivery</div>
+        </div>
+      </div>
+
+      <div class="trust__item">
+        <div class="trust__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <div class="trust__text">
+          <div class="trust__title">Existing Tools</div>
+          <div class="trust__desc">We work in your stack</div>
+        </div>
+      </div>
+
+      <div class="trust__item">
+        <div class="trust__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 20V10M12 20V4M6 20v-6"/>
+          </svg>
+        </div>
+        <div class="trust__text">
+          <div class="trust__title">Quality &amp; Reporting</div>
+          <div class="trust__desc">Regular performance reviews</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — SERVICES
+════════════════════════════════════════════════ -->
+<section class="section section--dark">
+  <div class="container">
+
+    <div class="section-header section-header--center animate-fade-up">
+      <span class="section-label">What We Do</span>
+      <h2>Support That Fits Your Workflow</h2>
+      <p class="text-lead">Flexible support services designed around your customers, processes and existing technology.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- 1 Email Support -->
+      <div class="service-card animate-fade-up">
+        <div class="service-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <h3>Email Support</h3>
+        <p>Handle customer enquiries, requests and follow-ups with professional written communication that represents your brand.</p>
+        <a href="services.html" class="service-card__arrow">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 2 Live Chat -->
+      <div class="service-card animate-fade-up">
+        <div class="service-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>Live Chat Support</h3>
+        <p>Provide fast, helpful support through your website or existing chat platform, keeping response times low.</p>
+        <a href="services.html" class="service-card__arrow">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 3 Customer Service -->
+      <div class="service-card animate-fade-up">
+        <div class="service-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Customer Service</h3>
+        <p>Manage day-to-day customer questions while maintaining your brand voice and delivering a consistent experience.</p>
+        <a href="services.html" class="service-card__arrow">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 4 Helpdesk -->
+      <div class="service-card animate-fade-up">
+        <div class="service-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <h3>Helpdesk Support</h3>
+        <p>Work directly inside your existing helpdesk and ticketing environment — Zendesk, Freshdesk, Intercom and more.</p>
+        <a href="services.html" class="service-card__arrow">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 5 Back-Office -->
+      <div class="service-card animate-fade-up">
+        <div class="service-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <h3>Back-Office Support</h3>
+        <p>Handle selected operational tasks that support your customer-service workflow, freeing your team for higher-value work.</p>
+        <a href="services.html" class="service-card__arrow">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 6 Overflow -->
+      <div class="service-card animate-fade-up">
+        <div class="service-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3>Overflow Support</h3>
+        <p>Add additional support capacity when ticket or customer volume increases — seasonal, launch-driven or ongoing.</p>
+        <a href="services.html" class="service-card__arrow">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+    </div><!-- /.services-grid -->
+
+    <div style="text-align:center;margin-top:2.5rem;" class="animate-fade-up">
+      <a href="services.html" class="btn btn-ghost btn-lg">
+        View All Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4 — INDUSTRY SPLIT
+════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-header section-header--center animate-fade-up">
+      <span class="section-label">Industries</span>
+      <h2>Built for Growing Businesses</h2>
+      <p class="text-lead">We work with two types of growing companies — and we understand what each one needs.</p>
+    </div>
+
+    <div class="industry-grid">
+
+      <!-- SaaS Card -->
+      <div class="industry-card animate-fade-up">
+        <div>
+          <div class="industry-icon-panel">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <span class="industry-card__badge badge--saas">SaaS / Software</span>
+        </div>
+        <h3>Support for Software Companies</h3>
+        <p>Consistent, knowledgeable support as your product and user base grows — without building a large internal team immediately.</p>
+        <ul class="industry-card__list">
+          <li>Product questions &amp; feature guidance</li>
+          <li>Account &amp; subscription support</li>
+          <li>Onboarding assistance</li>
+          <li>Helpdesk management</li>
+        </ul>
+        <a href="saas-support.html" class="btn btn-secondary" style="width:fit-content;">
+          Learn More
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- E-commerce Card -->
+      <div class="industry-card animate-fade-up">
+        <div>
+          <div class="industry-icon-panel">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </div>
+          <span class="industry-card__badge badge--ecom">E-commerce / D2C</span>
+        </div>
+        <h3>Support for Online Retailers</h3>
+        <p>Responsive customer support that keeps your shoppers happy and your team focused on growth — across every channel.</p>
+        <ul class="industry-card__list">
+          <li>Order enquiries &amp; tracking</li>
+          <li>Returns &amp; refunds</li>
+          <li>Product questions</li>
+          <li>Customer communications</li>
+        </ul>
+        <a href="ecommerce-support.html" class="btn btn-secondary" style="width:fit-content;">
+          Learn More
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+    </div><!-- /.industry-grid -->
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5 — HOW IT WORKS (teaser)
+════════════════════════════════════════════════ -->
+<section class="section section--dark">
+  <div class="container">
+
+    <div class="section-header section-header--center animate-fade-up">
+      <span class="section-label">Process</span>
+      <h2>Simple, Structured Onboarding</h2>
+      <p class="text-lead">Getting started with Creovix is straightforward. We take the time to understand your business before we start.</p>
+    </div>
+
+    <div class="steps-grid">
+
+      <div class="step-card animate-fade-up">
+        <div class="step-card__num">01</div>
+        <h3>Discovery Call</h3>
+        <p>We learn about your business, customers and support needs — including the tools you already use and the volumes you're handling.</p>
+      </div>
+
+      <div class="step-card animate-fade-up">
+        <div class="step-card__num">02</div>
+        <h3>Team Matching</h3>
+        <p>We identify the right agents for your specific workflow, industry and communication style to ensure a strong fit from day one.</p>
+      </div>
+
+      <div class="step-card animate-fade-up">
+        <div class="step-card__num">03</div>
+        <h3>SOP Setup</h3>
+        <p>We document your processes and align our team to your standards — so every response reflects your brand and expectations.</p>
+      </div>
+
+      <div class="step-card animate-fade-up">
+        <div class="step-card__num">04</div>
+        <h3>Go Live</h3>
+        <p>Your support team starts handling tickets within your existing tools. We monitor quality closely and refine as we go.</p>
+      </div>
+
+    </div><!-- /.steps-grid -->
+
+    <div style="text-align:center;margin-top:2.5rem;" class="animate-fade-up">
+      <a href="how-it-works.html" class="btn btn-secondary btn-lg">
+        See Full Process
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6 — ABOUT TEASER
+════════════════════════════════════════════════ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="split">
+
+      <!-- Left — Content -->
+      <div class="split__content animate-fade-up">
+        <span class="section-label">About Creovix</span>
+        <h2>A Partner, Not Just a Provider</h2>
+        <p>
+          Creovix Solution works as an extension of your team — not just an outsourced headcount. We take time to understand your brand, your customers and how your business operates, so our agents deliver support that genuinely reflects your standards.
+        </p>
+        <p>
+          Every engagement is built on clear processes, consistent communication and a focus on quality. We hold ourselves accountable through regular reviews and transparent reporting, so you always know how your support operation is performing.
+        </p>
+
+        <ul class="value-list" style="margin-bottom:2rem;">
+          <li class="value-item">
+            <span class="value-item__icon">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Dedicated agent teams aligned to your brand
+          </li>
+          <li class="value-item">
+            <span class="value-item__icon">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            SOP-driven quality control on every interaction
+          </li>
+          <li class="value-item">
+            <span class="value-item__icon">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Regular performance reviews and check-ins
+          </li>
+          <li class="value-item">
+            <span class="value-item__icon">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Transparent communication throughout
+          </li>
+        </ul>
+
+        <a href="about.html" class="btn btn-primary">
+          About Creovix
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right — Operating Principles panel -->
+      <div class="split__visual animate-fade-up">
+        <div class="split__panel">
+          <div class="split__panel-header">
+            <span class="split__panel-title">Operating Principles</span>
+            <div class="split__panel-dots">
+              <div class="split__panel-dot"></div>
+              <div class="split__panel-dot"></div>
+              <div class="split__panel-dot"></div>
+            </div>
+          </div>
+
+          <div class="principles-grid">
+
+            <div class="principle-card">
+              <div class="principle-card__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Dedicated Agents</h4>
+                <p>Your own team, not a shared pool</p>
+              </div>
+            </div>
+
+            <div class="principle-card">
+              <div class="principle-card__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 20V10M12 20V4M6 20v-6"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Transparent Reporting</h4>
+                <p>Clear visibility into performance</p>
+              </div>
+            </div>
+
+            <div class="principle-card">
+              <div class="principle-card__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"/>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                </svg>
+              </div>
+              <div>
+                <h4>SOP-Driven</h4>
+                <p>Process-first, consistent outcomes</p>
+              </div>
+            </div>
+
+            <div class="principle-card">
+              <div class="principle-card__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5"/>
+                  <path d="M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Flexible by Design</h4>
+                <p>Scales with your business needs</p>
+              </div>
+            </div>
+
+          </div><!-- /.principles-grid -->
+
+          <!-- Bottom accent strip -->
+          <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:0.6rem;">
+            <div style="width:8px;height:8px;border-radius:50%;background:#22C55E;box-shadow:0 0 0 3px rgba(34,197,94,0.2);flex-shrink:0;"></div>
+            <span style="font-size:0.8rem;color:var(--text-muted);">Quality reviewed on every engagement</span>
+          </div>
+
+        </div><!-- /.split__panel -->
+      </div><!-- /.split__visual -->
+
+    </div><!-- /.split -->
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 7 — CTA
+════════════════════════════════════════════════ -->
+<div class="cta-section">
+  <div class="cta-section__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="cta-section__inner animate-fade-up">
+      <span class="section-label">Get Started</span>
+      <h2>Ready to Strengthen Your<br>Customer Support?</h2>
+      <p>Book a free consultation to discuss your support needs and learn how Creovix can help your business deliver a better customer experience.</p>
+      <div class="cta-section__actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">
+          Book a Free Consultation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="services.html" class="btn btn-secondary btn-lg">Explore Our Services</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <img src="assets/logo.png" alt="Creovix Solution">
+          <span class="footer__brand-name">Creovix <span>Solution</span></span>
+        </div>
+        <p>Dedicated customer support teams for growing SaaS and e-commerce businesses. Scalable, professional and built around your workflow.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="footer__social" aria-label="Twitter/X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer__col-title">Services</p>
+        <ul class="footer__links">
+          <li><a href="services.html" class="footer__link">Email Support</a></li>
+          <li><a href="services.html" class="footer__link">Live Chat Support</a></li>
+          <li><a href="services.html" class="footer__link">Helpdesk Support</a></li>
+          <li><a href="services.html" class="footer__link">Back-Office Support</a></li>
+          <li><a href="services.html" class="footer__link">Overflow Support</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__col-title">Industries</p>
+        <ul class="footer__links">
+          <li><a href="saas-support.html" class="footer__link">SaaS Support</a></li>
+          <li><a href="ecommerce-support.html" class="footer__link">E-commerce Support</a></li>
+        </ul>
+        <p class="footer__col-title" style="margin-top:1.5rem;">Company</p>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About</a></li>
+          <li><a href="how-it-works.html" class="footer__link">How It Works</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__col-title">Get in Touch</p>
+        <div class="footer__contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:creovixsolution@creovixsolution.com">creovixsolution@creovixsolution.com</a>
+        </div>
+        <div class="footer__contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+919384558549">+91 93845 58549</a>
+        </div>
+        <div class="footer__contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+919360141251">+91 9360141251</a>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="contact.html" class="btn btn-primary btn-sm">Book a Consultation</a>
+        </div>
+      </div>
+
+    </div><!-- /.footer__top -->
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2024 Creovix Solution. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

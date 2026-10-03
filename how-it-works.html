@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works | Creovix Solution — Our Onboarding Process</title>
+  <meta name="description" content="Learn how Creovix Solution onboards new clients in 4 structured steps — from discovery call to go-live — with minimal disruption and full alignment from day one." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://creovixsolution.com/how-it-works.html" />
+  <meta property="og:title" content="How It Works | Creovix Solution" />
+  <meta property="og:description" content="Our structured 4-step onboarding process ensures your dedicated support team is trained, aligned and ready before handling a single customer conversation." />
+  <meta property="og:image" content="assets/logo.png" />
+
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ── Page-specific enhancements ── */
+
+    /* Hero geometric decoration */
+    .hiw-hero { position: relative; overflow: hidden; }
+    .hiw-hero__bg-art {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    }
+
+    /* ── Enhanced step layout ── */
+    .steps-enhanced { display: flex; flex-direction: column; gap: 0; }
+
+    .step-enhanced {
+      display: grid;
+      grid-template-columns: 80px 1fr 380px;
+      gap: 2rem 2.5rem;
+      position: relative;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* Connector line */
+    .step-enhanced:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 39px;
+      top: 80px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent) 0%, rgba(232,82,26,0.15) 80%, transparent 100%);
+    }
+
+    /* Number column */
+    .step-enhanced__num-col { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+
+    .step-enhanced__circle {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: var(--accent-subtle);
+      border: 2px solid rgba(232,82,26,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+      position: relative;
+      box-shadow: 0 0 24px rgba(232,82,26,0.15), inset 0 0 20px rgba(232,82,26,0.05);
+    }
+
+    .step-enhanced__circle::after {
+      content: '';
+      position: absolute; inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(232,82,26,0.15);
+    }
+
+    /* Timeline badge on number col */
+    .step-enhanced__week {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-subtle);
+      border: 1px solid rgba(232,82,26,0.25);
+      border-radius: var(--radius-full);
+      padding: 0.2rem 0.6rem;
+      white-space: nowrap;
+    }
+
+    /* Body text column */
+    .step-enhanced__body { padding-top: 0.75rem; }
+    .step-enhanced__title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.85rem;
+      line-height: 1.25;
+    }
+    .step-enhanced__desc {
+      font-size: 0.97rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    /* Panel */
+    .step-enhanced__panel {
+      background: var(--grad-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.75rem;
+      backdrop-filter: blur(10px);
+    }
+    .step-enhanced__panel-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .step-enhanced__checklist {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 0.65rem;
+    }
+    .step-enhanced__checklist li {
+      display: flex; align-items: center; gap: 0.65rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    .step-enhanced__checklist li .check-icon {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--accent-subtle);
+      border: 1px solid rgba(232,82,26,0.3);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-enhanced__checklist li .check-icon svg { color: var(--accent); }
+
+    /* Responsive steps */
+    @media (max-width: 900px) {
+      .step-enhanced {
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: auto auto;
+      }
+      .step-enhanced__panel { grid-column: 1 / -1; }
+      .step-enhanced:not(:last-child)::before { left: 29px; }
+      .step-enhanced__circle { width: 60px; height: 60px; font-size: 1.2rem; }
+    }
+    @media (max-width: 600px) {
+      .step-enhanced { grid-template-columns: 1fr; padding-bottom: 3rem; }
+      .step-enhanced__num-col { flex-direction: row; justify-content: flex-start; }
+      .step-enhanced:not(:last-child)::before { display: none; }
+    }
+
+    /* ── Principles 2×2 grid ── */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 700px) { .principles-grid { grid-template-columns: 1fr; } }
+
+    .principle-card {
+      background: var(--grad-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .principle-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--grad-accent);
+      opacity: 0;
+      transition: opacity var(--duration) var(--ease);
+    }
+    .principle-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-md);
+    }
+    .principle-card:hover::before { opacity: 1; }
+
+    .principle-card__icon {
+      width: 48px; height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--accent-subtle);
+      border: 1px solid rgba(232,82,26,0.25);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--accent);
+    }
+    .principle-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.65rem;
+    }
+    .principle-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* ── Hero visual ── */
+    .hiw-hero-visual {
+      display: flex; align-items: center; justify-content: center;
+      height: 100%; min-height: 260px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">
+          <img src="assets/logo.png" alt="Creovix Solution">
+          <span class="nav__logo-text">Creovix <span>Solution</span></span>
+        </a>
+        <ul class="nav__links">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item">
+            <a href="services.html" class="nav__link">Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Industries ▾</a>
+            <div class="nav__dropdown">
+              <a href="saas-support.html" class="nav__dropdown-link">SaaS Support</a>
+              <a href="ecommerce-support.html" class="nav__dropdown-link">E-commerce Support</a>
+            </div>
+          </li>
+          <li><a href="how-it-works.html" class="nav__link">How It Works</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+        <div class="nav__cta">
+          <a href="contact.html" class="btn btn-primary btn-sm">Book a Consultation</a>
+        </div>
+        <button class="nav__hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="nav__mobile">
+    <button class="nav__mobile-close">✕</button>
+    <a href="index.html" class="nav__mobile-link">Home</a>
+    <a href="services.html" class="nav__mobile-link">Services</a>
+    <a href="saas-support.html" class="nav__mobile-link">SaaS Support</a>
+    <a href="ecommerce-support.html" class="nav__mobile-link">E-commerce Support</a>
+    <a href="how-it-works.html" class="nav__mobile-link">How It Works</a>
+    <a href="about.html" class="nav__mobile-link">About</a>
+    <a href="contact.html" class="nav__mobile-link btn btn-primary" style="margin-top:1rem;">Book a Consultation</a>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <section class="hiw-hero page-hero" style="background: var(--grad-hero); padding: var(--section-py) 0; position:relative; overflow:hidden;">
+
+      <!-- Background art -->
+      <div class="hiw-hero__bg-art" aria-hidden="true">
+        <svg width="100%" height="100%" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Dot grid -->
+          <defs>
+            <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+              <circle cx="1.5" cy="1.5" r="1.5" fill="rgba(255,255,255,0.04)"/>
+            </pattern>
+          </defs>
+          <rect width="1200" height="520" fill="url(#dots)"/>
+          <!-- Glowing orb -->
+          <ellipse cx="980" cy="260" rx="320" ry="280" fill="rgba(232,82,26,0.06)"/>
+          <ellipse cx="980" cy="260" rx="180" ry="160" fill="rgba(232,82,26,0.05)"/>
+          <!-- Process flow line art -->
+          <line x1="700" y1="100" x2="700" y2="420" stroke="rgba(232,82,26,0.12)" stroke-width="1.5" stroke-dasharray="6 10"/>
+          <circle cx="700" cy="150" r="22" stroke="rgba(232,82,26,0.2)" stroke-width="1.5" fill="rgba(232,82,26,0.05)"/>
+          <circle cx="700" cy="230" r="22" stroke="rgba(232,82,26,0.2)" stroke-width="1.5" fill="rgba(232,82,26,0.05)"/>
+          <circle cx="700" cy="310" r="22" stroke="rgba(232,82,26,0.2)" stroke-width="1.5" fill="rgba(232,82,26,0.05)"/>
+          <circle cx="700" cy="390" r="22" stroke="rgba(232,82,26,0.2)" stroke-width="1.5" fill="rgba(232,82,26,0.05)"/>
+          <text x="688" y="155" fill="rgba(232,82,26,0.4)" font-family="Inter" font-weight="700" font-size="12">1</text>
+          <text x="688" y="235" fill="rgba(232,82,26,0.4)" font-family="Inter" font-weight="700" font-size="12">2</text>
+          <text x="688" y="315" fill="rgba(232,82,26,0.4)" font-family="Inter" font-weight="700" font-size="12">3</text>
+          <text x="688" y="395" fill="rgba(232,82,26,0.4)" font-family="Inter" font-weight="700" font-size="12">4</text>
+          <!-- Connector lines right -->
+          <line x1="722" y1="150" x2="800" y2="150" stroke="rgba(232,82,26,0.12)" stroke-width="1" stroke-dasharray="4 6"/>
+          <line x1="722" y1="230" x2="800" y2="230" stroke="rgba(232,82,26,0.12)" stroke-width="1" stroke-dasharray="4 6"/>
+          <line x1="722" y1="310" x2="800" y2="310" stroke="rgba(232,82,26,0.12)" stroke-width="1" stroke-dasharray="4 6"/>
+          <line x1="722" y1="390" x2="800" y2="390" stroke="rgba(232,82,26,0.12)" stroke-width="1" stroke-dasharray="4 6"/>
+        </svg>
+      </div>
+
+      <div class="container" style="position:relative; z-index:1;">
+        <div style="max-width: 680px;">
+          <div class="section-label animate-fade-up">Our Process</div>
+          <h1 class="animate-fade-up" style="margin-bottom:1.25rem;">Simple, Structured<br>Onboarding</h1>
+          <p class="lead animate-fade-up" style="color:var(--text-secondary); max-width: 600px;">
+            We take the time to understand your business, your customers and your existing processes before we ever handle a customer conversation. Here's how it works.
+          </p>
+          <div class="animate-fade-up" style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary">Book a Free Consultation</a>
+            <a href="services.html" class="btn btn-ghost">View Our Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         PROCESS TIMELINE
+    ═══════════════════════════════════════ -->
+    <section class="section" style="background: var(--navy-900);">
+      <div class="container">
+
+        <div class="section-header animate-fade-up">
+          <div class="section-label">The Process</div>
+          <h2>How We Get Started</h2>
+          <p>A structured onboarding process that minimises disruption and ensures alignment from day one.</p>
+        </div>
+
+        <div class="steps-enhanced">
+
+          <!-- ── STEP 1 ── -->
+          <div class="step-enhanced animate-fade-up">
+            <div class="step-enhanced__num-col">
+              <div class="step-enhanced__circle">1</div>
+              <span class="step-enhanced__week">Week 1</span>
+            </div>
+
+            <div class="step-enhanced__body">
+              <div class="step-enhanced__title">Discovery Call</div>
+              <p class="step-enhanced__desc">
+                We start with a detailed consultation call to understand your business, your customers, your support volumes and your current challenges. There are no scripts or assumptions — just a genuine conversation about what you need.
+              </p>
+            </div>
+
+            <div class="step-enhanced__panel">
+              <div class="step-enhanced__panel-title">What gets discussed</div>
+              <ul class="step-enhanced__checklist">
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Support volume &amp; channels
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Current tools &amp; helpdesk
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Common customer issues
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  SLA expectations
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Brand voice &amp; tone
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ── STEP 2 ── -->
+          <div class="step-enhanced animate-fade-up">
+            <div class="step-enhanced__num-col">
+              <div class="step-enhanced__circle">2</div>
+              <span class="step-enhanced__week">Weeks 1–2</span>
+            </div>
+
+            <div class="step-enhanced__body">
+              <div class="step-enhanced__title">Proposal &amp; Alignment</div>
+              <p class="step-enhanced__desc">
+                Based on the discovery call, we put together a clear proposal outlining the team structure, service scope and onboarding timeline. We answer any questions and refine the scope until you're confident it meets your needs.
+              </p>
+            </div>
+
+            <div class="step-enhanced__panel">
+              <div class="step-enhanced__panel-title">What's included in the proposal</div>
+              <ul class="step-enhanced__checklist">
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Team structure
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Service scope
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Onboarding timeline
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Pricing &amp; terms
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ── STEP 3 ── -->
+          <div class="step-enhanced animate-fade-up">
+            <div class="step-enhanced__num-col">
+              <div class="step-enhanced__circle">3</div>
+              <span class="step-enhanced__week">Weeks 2–3</span>
+            </div>
+
+            <div class="step-enhanced__body">
+              <div class="step-enhanced__title">SOP Development &amp; Agent Training</div>
+              <p class="step-enhanced__desc">
+                Before any agent handles a customer conversation, we document your processes. We build standard operating procedures based on your existing knowledge base, support history and brand guidelines. Agents are trained and tested before going live.
+              </p>
+            </div>
+
+            <div class="step-enhanced__panel">
+              <div class="step-enhanced__panel-title">SOP setup includes</div>
+              <ul class="step-enhanced__checklist">
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Process documentation
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Knowledge base review
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Brand voice alignment
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Agent training &amp; testing
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  QA sign-off
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ── STEP 4 ── -->
+          <div class="step-enhanced animate-fade-up" style="padding-bottom: 0;">
+            <div class="step-enhanced__num-col">
+              <div class="step-enhanced__circle" style="background: var(--grad-accent); border-color: var(--accent); color: #fff; box-shadow: var(--shadow-accent);">4</div>
+              <span class="step-enhanced__week">Week 4</span>
+            </div>
+
+            <div class="step-enhanced__body">
+              <div class="step-enhanced__title">Go Live &amp; Ongoing</div>
+              <p class="step-enhanced__desc">
+                Your dedicated support team starts handling customer conversations inside your existing tools. We monitor closely in the early weeks, hold regular check-ins and make refinements as needed. This is a long-term partnership, not a one-off setup.
+              </p>
+            </div>
+
+            <div class="step-enhanced__panel" style="border-color: rgba(232,82,26,0.3); background: linear-gradient(135deg, rgba(232,82,26,0.08) 0%, rgba(232,82,26,0.03) 100%);">
+              <div class="step-enhanced__panel-title">Ongoing commitments</div>
+              <ul class="step-enhanced__checklist">
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Regular performance reviews
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  QA monitoring
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Reporting
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Scaling as needed
+                </li>
+                <li>
+                  <span class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  Direct communication
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div><!-- /steps-enhanced -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         PRINCIPLES SECTION
+    ═══════════════════════════════════════ -->
+    <section class="section" style="background: var(--navy-950);">
+      <div class="container">
+
+        <div class="section-header animate-fade-up">
+          <div class="section-label">How We Operate</div>
+          <h2>The Principles Behind Our Work</h2>
+          <p>The principles that guide how we work with every client.</p>
+        </div>
+
+        <div class="principles-grid">
+
+          <!-- Card 1 -->
+          <div class="principle-card animate-fade-up">
+            <div class="principle-card__icon">
+              <!-- Users icon -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3>Dedicated, Not Shared</h3>
+            <p>Your agents work on your account during their working hours. Consistency comes from familiarity — the same people, learning your product and customers over time.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="principle-card animate-fade-up">
+            <div class="principle-card__icon">
+              <!-- File-text icon -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3>Process-First</h3>
+            <p>Every interaction follows a documented SOP. Quality comes from clear processes, not luck. We build the playbook before a single conversation is handled.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="principle-card animate-fade-up">
+            <div class="principle-card__icon">
+              <!-- Bar-chart icon -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <h3>Transparent Communication</h3>
+            <p>Regular reporting and open communication. You always know how your support team is performing — no black boxes, no guesswork.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="principle-card animate-fade-up">
+            <div class="principle-card__icon">
+              <!-- Trending-up icon -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
+            <h3>Built to Scale</h3>
+            <p>Start with the team size you need today and scale as your business grows. Our model is flexible — add capacity when you need it, without starting from scratch.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FAQ SECTION
+    ═══════════════════════════════════════ -->
+    <section class="section" style="background: var(--navy-900);">
+      <div class="container">
+
+        <div class="section-header animate-fade-up">
+          <div class="section-label">FAQ</div>
+          <h2>Common Questions About Onboarding</h2>
+        </div>
+
+        <div class="faq animate-fade-up" style="max-width: 780px; margin: 0 auto;">
+
+          <div class="faq__item">
+            <div class="faq__question" role="button" tabindex="0" aria-expanded="false">
+              How long does onboarding take?
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+              </span>
+            </div>
+            <div class="faq__answer" role="region">
+              <div class="faq__answer-inner">
+                Typically 2–4 weeks depending on the complexity of your processes and the size of your documentation requirements. Simpler setups can be faster.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question" role="button" tabindex="0" aria-expanded="false">
+              What do I need to prepare?
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+              </span>
+            </div>
+            <div class="faq__answer" role="region">
+              <div class="faq__answer-inner">
+                Ideally, existing support documentation, FAQs and access to your helpdesk. We can work with whatever you have and help structure what's missing.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question" role="button" tabindex="0" aria-expanded="false">
+              Will the same agents handle my account every day?
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+              </span>
+            </div>
+            <div class="faq__answer" role="region">
+              <div class="faq__answer-inner">
+                Yes. We aim for consistency. The same core team handles your account so agents develop familiarity with your product and customers over time.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question" role="button" tabindex="0" aria-expanded="false">
+              How do you handle quality assurance?
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+              </span>
+            </div>
+            <div class="faq__answer" role="region">
+              <div class="faq__answer-inner">
+                We conduct regular QA reviews of tickets and conversations, provide reporting and hold periodic review calls to ensure standards are maintained.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question" role="button" tabindex="0" aria-expanded="false">
+              What if things need adjusting after go-live?
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+              </span>
+            </div>
+            <div class="faq__answer" role="region">
+              <div class="faq__answer-inner">
+                Refinements are expected and welcome. We hold regular check-ins especially in the first few weeks to make adjustments quickly.
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /faq -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CTA SECTION
+    ═══════════════════════════════════════ -->
+    <section class="cta-section">
+      <div class="cta-section__glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta-section__inner animate-fade-up">
+          <div class="section-label" style="justify-content:center; display:flex;">Get Started</div>
+          <h2>Ready to Get Started?</h2>
+          <p>Book a free consultation and we'll walk you through the process in detail.</p>
+          <div class="cta-section__actions">
+            <a href="contact.html" class="btn btn-primary">Book a Free Consultation</a>
+            <a href="services.html" class="btn btn-ghost">Learn About Our Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__brand-logo">
+            <img src="assets/logo.png" alt="Creovix Solution">
+            <span class="footer__brand-name">Creovix <span>Solution</span></span>
+          </div>
+          <p>Dedicated customer support teams for growing SaaS and e-commerce businesses. Scalable, professional and built around your workflow.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="Twitter/X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__col-title">Services</p>
+          <ul class="footer__links">
+            <li><a href="services.html" class="footer__link">Email Support</a></li>
+            <li><a href="services.html" class="footer__link">Live Chat Support</a></li>
+            <li><a href="services.html" class="footer__link">Helpdesk Support</a></li>
+            <li><a href="services.html" class="footer__link">Back-Office Support</a></li>
+            <li><a href="services.html" class="footer__link">Overflow Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Industries</p>
+          <ul class="footer__links">
+            <li><a href="saas-support.html" class="footer__link">SaaS Support</a></li>
+            <li><a href="ecommerce-support.html" class="footer__link">E-commerce Support</a></li>
+          </ul>
+          <p class="footer__col-title" style="margin-top:1.5rem;">Company</p>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="how-it-works.html" class="footer__link">How It Works</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Get in Touch</p>
+          <div class="footer__contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:creovixsolution@creovixsolution.com">creovixsolution@creovixsolution.com</a>
+        </div>
+        <div class="footer__contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+919384558549">+91 93845 58549</a>
+        </div>
+        <div class="footer__contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+919360141251">+91 9360141251</a>
+        </div>
+          <div style="margin-top:1.5rem;">
+            <a href="contact.html" class="btn btn-primary btn-sm">Book a Consultation</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2024 Creovix Solution. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
