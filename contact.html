@@ -580,6 +580,7 @@
             <input type="hidden" name="_subject" value="New B2B Lead from Creovix Solution Website">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://creovixsolution.com/contact.html?status=success">
 
             <!-- Name row -->
             <div class="form-row">
@@ -613,6 +614,7 @@
                   <option value="" disabled selected>-- Select Industry --</option>
                   <option value="saas">B2B SaaS / Software</option>
                   <option value="ecommerce">E-commerce / D2C</option>
+                  <option value="logistics">Logistics / Supply Chain</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -781,6 +783,7 @@
           <li><a href="services.html" class="footer__link">Live Chat Support</a></li>
           <li><a href="services.html" class="footer__link">Helpdesk Support</a></li>
           <li><a href="services.html" class="footer__link">Back-Office Support</a></li>
+          <li><a href="services.html" class="footer__link">Logistics Support</a></li>
           <li><a href="services.html" class="footer__link">Overflow Support</a></li>
         </ul>
       </div>
@@ -845,6 +848,15 @@
       }
     });
   });
+
+  // ── Handle ?status=success redirect ──
+  var urlParams = new URLSearchParams(window.location.search);
+  var formEl = document.getElementById('contactForm');
+  var successEl = document.getElementById('formSuccess');
+  if (urlParams.get('status') === 'success' && formEl && successEl) {
+    formEl.style.display = 'none';
+    successEl.style.display = 'block';
+  }
 </script>
 </body>
 </html>

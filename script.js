@@ -138,17 +138,33 @@ document.addEventListener('DOMContentLoaded', () => {
           body: formData
         });
 
-        if (response.ok) {
+        const data = await response.json();
+
+        if (data.success === 'true' || data.success === true) {
           if (formSuccess) {
             contactForm.style.display = 'none';
             formSuccess.style.display = 'block';
+            const sTitle = formSuccess.querySelector('h3');
+            const sDesc = formSuccess.querySelector('p');
+            if (sTitle) sTitle.textContent = 'Message Sent!';
+            if (sDesc) sDesc.textContent = "Thank you for reaching out. We've received your message and will get back to you within one business day.";
           } else {
             btn.textContent = '✓ Message Sent!';
             btn.style.background = 'linear-gradient(135deg, #22C55E, #16A34A)';
             contactForm.reset();
           }
+        } else if (data.message && data.message.toLowerCase().includes('confirm')) {
+          // One-time email activation required by FormSubmit
+          if (formSuccess) {
+            contactForm.style.display = 'none';
+            formSuccess.style.display = 'block';
+            const sTitle = formSuccess.querySelector('h3');
+            const sDesc = formSuccess.querySelector('p');
+            if (sTitle) sTitle.textContent = 'Action Required: Activate Your Form';
+            if (sDesc) sDesc.innerHTML = 'FormSubmit has sent a one-time activation link to <strong>creovixsolution@creovixsolution.com</strong>.<br><br>👉 Please open your <strong>Zoho Mail</strong> (check <strong>Inbox</strong> or <strong>Spam / Junk</strong> folder) and click <strong>"Activate Form"</strong>.<br><br>Once you click it once, all future submissions will arrive straight in your inbox!';
+          }
         } else {
-          // If AJAX endpoint returns an error, fallback to native submission
+          // If AJAX endpoint returns another state, fallback to native submission
           contactForm.submit();
         }
       } catch (err) {
